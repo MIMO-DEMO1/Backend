@@ -14,10 +14,8 @@ import { ConfigModule } from '@nestjs/config';
     CacheModule.register({
       isGlobal: true,
       store: redisStore,
-      socket: {
-        host: process.env.REDIS_STORE_HOST,
-        port: Number(process.env.REDIS_STORE_PORT),
-      },
+      host: process.env.REDIS_STORE_HOST,
+      port: Number(process.env.REDIS_STORE_PORT),
       username: process.env.REDIS_USERNAME,
       password: process.env.REDIS_PASSWORD,
       no_ready_check: true,
