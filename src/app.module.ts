@@ -14,7 +14,7 @@ import { ConfigModule } from '@nestjs/config';
     CacheModule.register({
       isGlobal: true,
       store: redisStore,
-      url: "redis://default:swI4YdbJqO8D7kinqZzwSG7DXRNjtgyk@redis-18200.c326.us-east-1-3.ec2.cloud.redislabs.com:18200",
+      url: `redis://${process.env.REDIS_USERNAME}:${process.env.REDIS_PASSWORD}@${process.env.REDIS_STORE_HOST}:${process.env.REDIS_STORE_PORT}`,
     }),
     AuthModule,
     UserModule,
